@@ -347,8 +347,8 @@ class ASR(object):
 	def __read_wav_file_in_chunks(filepath):
 		file_to_play = wave.open(filepath, 'rb')
 		total_size = os.path.getsize(filepath) - 44 # 44 = wave header size
-		print ("  Audio File          %s" % filepath
-		data = file_to_play.readframes(ASR.chunk_size))
+		print ("  Audio File          %s" % filepath)
+		data = file_to_play.readframes(ASR.chunk_size)
 		total_chunks = 0
 		while data != '':
 			total_chunks += len(data)
